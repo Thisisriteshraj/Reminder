@@ -9,5 +9,11 @@ data class User(
     var notificationID: Int = 0,
     var name: String = "",
     val minute: Int = 0,
-    val hour: Int = 0
+    val hour: Int = 0,
+    var day: Int = 0,
+    val month: Int = 0,
+    val year: Int = 0,
+    var title: String = "",
+    var message: String = ""
 )
+

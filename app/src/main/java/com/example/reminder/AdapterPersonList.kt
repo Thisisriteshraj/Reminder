@@ -8,7 +8,7 @@ import com.example.reminder.databinding.ItemPersonBinding
 import com.example.reminder.interfaces.OnItemClickOfUserUserBirthdayScheduled
 import com.example.reminder.room.User
 
-class AdapterPersonList(private var list: ArrayList<User>,var onItemClickOfUserUserBirthdayScheduled: OnItemClickOfUserUserBirthdayScheduled) :
+class AdapterPersonList(private var list: ArrayList<User>, private var onItemClickOfUserUserBirthdayScheduled: OnItemClickOfUserUserBirthdayScheduled) :
     RecyclerView.Adapter<AdapterPersonList.ViewHolder>() {
     class ViewHolder(val binding: ItemPersonBinding) : RecyclerView.ViewHolder(binding.root) {
 
@@ -36,7 +36,7 @@ class AdapterPersonList(private var list: ArrayList<User>,var onItemClickOfUserU
         holder.binding.minute.text= list[position].minute.toString()
 
         holder.binding.delete.setOnClickListener {
-            onItemClickOfUserUserBirthdayScheduled.onItemClick(list[position])
+            onItemClickOfUserUserBirthdayScheduled.onItemClick(list[position]  )
 
         }
 

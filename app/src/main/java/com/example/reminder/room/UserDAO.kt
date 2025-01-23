@@ -6,12 +6,16 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 
-
 @Dao
 interface UserDAO {
 
     @Query("SELECT * FROM  USER")
-     fun getAllUserList(): LiveData<List<User>>
+     fun getAllUserList2(): LiveData<List<User>>
+
+
+
+    @Query("SELECT * FROM  USER")
+    fun getAllUserList(): MutableList<User>
 
     @Insert
     suspend fun insertUserData(user: User)

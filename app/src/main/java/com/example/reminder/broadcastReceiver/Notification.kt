@@ -33,7 +33,6 @@ class Notification : BroadcastReceiver() {
     fun createNotificationChannel(context: Context) {
         val name = "Notif Channel"
         val desc = "A Description of the Channel"
-        val importance = NotificationManager.IMPORTANCE_HIGH
 
         // Specify the custom sound URI
         val soundUri = Uri.parse("android.resource://com.example.reminder/raw/sound_a")
@@ -45,7 +44,7 @@ class Notification : BroadcastReceiver() {
             .build()
 
         // Create the channel
-        val channel = NotificationChannel(channelID, name, importance).apply {
+        val channel = NotificationChannel(channelID, name,  NotificationManager.IMPORTANCE_HIGH).apply {
             description = desc
             setSound(soundUri, audioAttributes) // Set the custom sound
         }
@@ -55,8 +54,8 @@ class Notification : BroadcastReceiver() {
     }
 
     private fun notificationCalling(context: Context, intent: Intent) {
-        val notificationIntent = Intent(context, AddNewPeople::class.java)
 
+        val notificationIntent = Intent(context, AddNewPeople::class.java)
         val pendingIntent = PendingIntent.getActivity(
             context,
             0,
